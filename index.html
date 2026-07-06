@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClimatePros Use Case B &middot; Job Summarisation Copilot &middot; Key Diagrams</title>
+<title>ClimatePros Use Case B &middot; Job Summarisation Copilot</title>
 <style>
  :root {
  --primary: #1a56db; --primary-light: #e8effc; --primary-dark: #0f3a8e;
@@ -21,9 +21,6 @@
  h3 { font-size: 19px; font-weight: 600; color: var(--text); margin: 0 0 14px; }
  p { margin-bottom: 14px; }
  code { background: #f1f5f9; padding: 2px 7px; border-radius: 5px; font-family: 'Consolas', monospace; font-size: 13px; color: var(--primary-dark); }
- .badge { display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
- .badge-built { background: #d1fae5; color: #059669; }
- .badge-planned { background: #fef3c7; color: #d97706; }
  @media print { .main { padding: 10px; } }
 </style>
 </head>
@@ -31,15 +28,53 @@
 <div class="main">
 
 <div class="hero">
- <h1>ClimatePros AI Summarisation &middot; Key Diagrams</h1>
+ <h1>ClimatePros AI Summarisation</h1>
     <div class="subtitle" style="font-size:18px; font-weight:600; margin-bottom:4px;">Use Case B &middot; Job Summarisation Copilot</div>
- <div class="subtitle" style="opacity:0.85;">Technician flow today &middot; technician flow with the AI copilot &middot; high-level architecture &middot; low-level process flow</div>
+ <div class="subtitle" style="opacity:0.85;">What Use Case B is &middot; technician flow today &middot; technician flow with the AI copilot &middot; high-level architecture</div>
 </div>
+
+<section>
+<h2>What is Use Case B? &middot; The one-minute version</h2>
+
+ <p style="font-size:15px;">Every service visit ends with paperwork: the technician has to describe what was wrong, what they did, what parts they used, and whether the customer's compliance rules were followed. Today that write-up is typed by hand, its quality depends entirely on who is typing, and mistakes are only discovered days later in the office, when the fix is a phone call or a repeat truck roll. <strong>Use Case B puts an AI copilot inside the technician's mobile app</strong> that does three things: it <strong>briefs</strong> the technician on the site's history before they arrive, it <strong>drafts</strong> the job write-up from what they entered in the app, and it <strong>checks</strong> the ticket for missing or vague information <em>before</em> it can be submitted, so problems are caught on site, not days later.</p>
+
+ <div style="display:flex; align-items:stretch; gap:0; margin:22px 0 18px; flex-wrap:wrap;">
+ <div style="flex:1; min-width:230px; background:var(--surface); border:1.5px solid var(--border); border-radius:14px; padding:18px 22px;">
+ <div style="font-size:11px; font-weight:800; letter-spacing:1px; color:var(--text-muted);">USE CASE A</div>
+ <div style="font-size:16px; font-weight:700; color:var(--text); margin:4px 0 6px;">&#128197; Auto-Scheduling &amp; Dispatch</div>
+ <div style="font-size:12.5px; color:var(--text-muted);">Decides <strong>who</strong> should take the job: ranks and assigns the right technician to each dispatch. (Separate feature, shown here only for context.)</div>
+ </div>
+ <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 14px; min-width:150px;">
+ <div style="font-size:22px; color:var(--primary);">&#10132;</div>
+ <div style="font-size:11px; font-weight:700; color:var(--primary-dark); text-align:center; margin-top:2px;">dispatch assigned<br>to a technician</div>
+ </div>
+ <div style="flex:1.3; min-width:260px; background:var(--primary-light); border:2px solid var(--primary); border-radius:14px; padding:18px 22px;">
+ <div style="font-size:11px; font-weight:800; letter-spacing:1px; color:var(--primary-dark);">USE CASE B &middot; THIS DOCUMENT</div>
+ <div style="font-size:16px; font-weight:700; color:var(--primary-dark); margin:4px 0 6px;">&#129302; Job Summarisation Copilot</div>
+ <div style="font-size:12.5px; color:var(--text);">Picks up <strong>the moment Use Case A assigns the job</strong>: briefs the technician on the site's history, drafts the job write-up, and blocks incomplete tickets before submission.</div>
+ </div>
+ </div>
+
+ <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:8px;">
+ <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 18px;">
+ <div style="font-size:13px; font-weight:700; color:var(--primary-dark); margin-bottom:4px;">&#129517; Arrive prepared</div>
+ <div style="font-size:12px; color:var(--text-muted);">Techs stop going in cold: past visits and known issues at that site are summarised into a briefing before they arrive.</div>
+ </div>
+ <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 18px;">
+ <div style="font-size:13px; font-weight:700; color:var(--primary-dark); margin-bottom:4px;">&#128221; Consistent write-ups</div>
+ <div style="font-size:12px; color:var(--text-muted);">Every ticket follows the same 12-section standard, whether written by a 20-year veteran or a new hire.</div>
+ </div>
+ <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 18px;">
+ <div style="font-size:13px; font-weight:700; color:var(--primary-dark); margin-bottom:4px;">&#128222; Fewer call-backs</div>
+ <div style="font-size:12px; color:var(--text-muted);">Missing photos, refrigerant data, or unmet compliance steps are caught on site, instead of triggering calls and return visits days later.</div>
+ </div>
+ </div>
+</section>
 
 <section>
 <h2>1. Technician User Flow &middot; Today (without AI)</h2>
 
- <p>The current experience in the mobile app. Every step works, but the tech goes in cold, types everything by hand, and problems surface only after they have left the site. <span style="color:#dc2626;font-weight:600">Red = where it hurts today</span>.</p>
+ <p>This is how a service visit works in the mobile app today. The process functions end to end, but it leaves value on the table at three points: technicians arrive without the benefit of the site's service history, every job record is written by hand, and quality issues are discovered only after the technician has left, when correcting them is most expensive. <span style="color:#dc2626;font-weight:600">Red marks where those costs arise today</span>.</p>
  <div style="overflow-x:auto; background:#fff; border:1px solid var(--border); border-radius:12px; padding:10px 6px; margin-bottom:26px;">
  <svg viewBox="0 0 1075 400" width="100%" style="min-width:950px; font-family:inherit;">
  <defs>
@@ -136,7 +171,7 @@
 <section>
 <h2>2. Technician User Flow &middot; With the AI Copilot - same journey, every pain point answered</h2>
 
- <p>Top lane: what the technician does. Bottom lane: what the AI does for them at that moment. <span style="color:#2563eb;font-weight:600">Blue = tech action</span> &middot; <span style="color:#d97706;font-weight:600">amber = AI-assisted step</span>.</p>
+ <p>The same visit with the copilot in place. The technician's journey is unchanged; the AI works alongside it, preparing a briefing before arrival, drafting the paperwork, and verifying the ticket before submission. The top lane shows the technician's steps; the bottom lane shows what the AI contributes at each moment. <span style="color:#2563eb;font-weight:600">Blue = technician action</span> &middot; <span style="color:#d97706;font-weight:600">amber = AI-assisted step</span>.</p>
  <div style="overflow-x:auto; background:#fff; border:1px solid var(--border); border-radius:12px; padding:10px 6px; margin-bottom:20px;">
  <svg viewBox="0 0 1075 600" width="100%" style="min-width:950px; font-family:inherit;">
  <defs>
@@ -253,678 +288,144 @@
  <text x="540" y="575" text-anchor="middle" font-size="10" font-weight="600" fill="#64748b">the flywheel: every clean ticket becomes better history for the next tech's briefing</text>
  </svg>
  </div>
- <p style="font-size:13px; color:var(--text-muted);">The copilot moments in words: at assignment, the briefing builder pulls this site's history from SQL and similar incidents from the vector index, and Gemini writes a short card ("the previous techs did X; the issue recurred; try Y first"), cached so it opens instantly. In the wizard, known values are prefilled so the tech only types what is new. On Review, the analyse pipeline returns the 12-section ticket and procedure checklist; gaps are fixed inline until clean, and the accepted summary is persisted, becoming the history that briefs the 11th tech.</p>
 </section>
 
 <section>
 <h2>3. High-Level Architecture</h2>
 
  <div style="overflow-x:auto; background:#fff; border:1px solid var(--border); border-radius:12px; padding:10px 6px; margin-bottom:28px;">
- <svg viewBox="0 0 1060 600" width="100%" style="min-width:900px; font-family:inherit;">
+ <svg viewBox="0 0 1240 650" width="100%" style="min-width:1000px; font-family:inherit;">
  <defs>
  <marker id="be-blue" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#2563eb"/></marker>
  <marker id="be-amber" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#d97706"/></marker>
  <marker id="be-green" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#059669"/></marker>
  <marker id="be-green-r" markerWidth="10" markerHeight="10" refX="1" refY="3.5" orient="auto"><path d="M7,0 L0,3.5 L7,7 Z" fill="#059669"/></marker>
+ <marker id="be-purple" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7c3aed"/></marker>
  </defs>
 
- <!-- ===== 1 MOBILE APP ===== -->
- <rect x="18" y="235" width="180" height="120" rx="14" fill="#fff" stroke="#93c5fd" stroke-width="1.5"/>
- <text x="108" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#0f3a8e">&#128241; Mobile App</text>
- <text x="108" y="300" text-anchor="middle" font-size="11" fill="#64748b">FieldJetX (Flutter)</text>
- 
+ <!-- ===== ZONE 1: EXISTING FIELDJETX PLATFORM ===== -->
+ <rect x="18" y="60" width="500" height="520" rx="16" fill="#eff4ff" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="7 5"/>
+ <text x="268" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#0f3a8e" letter-spacing="1">EXISTING FIELDJETX PLATFORM</text>
+ <text x="268" y="104" text-anchor="middle" font-size="10" fill="#64748b">unchanged</text>
+
+ <!-- ===== ZONE 2: NEW AI LAYER ===== -->
+ <rect x="560" y="60" width="480" height="520" rx="16" fill="#fffaf3" stroke="#d97706" stroke-width="1.5" stroke-dasharray="7 5"/>
+ <text x="800" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309" letter-spacing="1">NEW AI LAYER &middot; THIS PROJECT</text>
+ <text x="800" y="104" text-anchor="middle" font-size="10" fill="#b45309">runs in a private AWS VPC</text>
+
+ <!-- ===== ZONE 3: THIRD-PARTY AI ===== -->
+ <text x="1150" y="225" text-anchor="middle" font-size="10" font-weight="800" fill="#7c3aed" letter-spacing="1">GOOGLE</text>
+
+ <!-- Mobile App -->
+ <rect x="40" y="130" width="160" height="110" rx="14" fill="#fff" stroke="#93c5fd" stroke-width="1.5"/>
+ <text x="120" y="177" text-anchor="middle" font-size="15" font-weight="700" fill="#0f3a8e">&#128241; Mobile App</text>
+ <text x="120" y="198" text-anchor="middle" font-size="11" fill="#64748b">FieldJetX (Flutter)</text>
+
  <!-- arrow mobile -> .NET -->
- <path d="M198 295 H 262" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#be-blue)"/>
- <text x="231" y="283" text-anchor="middle" font-size="10.5" font-weight="600" fill="#2563eb">existing auth</text>
+ <path d="M200 167 H 286" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#be-blue)"/>
+ <text x="243" y="155" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb" stroke="#ffffff" stroke-width="5" paint-order="stroke">existing auth</text>
+ <circle cx="230" cy="190" r="9" fill="#1a56db"/>
+ <text x="230" y="194" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">1</text>
 
- <!-- ===== 2+3 .NET TIER ===== -->
- <rect x="268" y="60" width="250" height="480" rx="16" fill="#eff4ff" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="7 5"/>
- <text x="393" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#0f3a8e" letter-spacing="1">EXISTING APIS</text>
- <text x="393" y="104" text-anchor="middle" font-size="10" fill="#64748b">fieldjetx.com &middot; unchanged</text>
+ <!-- .NET APIs -->
+ <rect x="290" y="130" width="206" height="75" rx="10" fill="#fff" stroke="#93c5fd" stroke-width="1.5"/>
+ <text x="393" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">.NET Legacy API</text>
+ <text x="393" y="185" text-anchor="middle" font-size="10" fill="#64748b">AWS EC2</text>
 
- <rect x="290" y="122" width="206" height="82" rx="10" fill="#fff" stroke="#93c5fd" stroke-width="1.5"/>
- <text x="393" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">.NET Legacy API</text>
- <text x="393" y="172" text-anchor="middle" font-size="10" fill="#64748b">dispatch &middot; equipment &middot; procedures</text>
+ <rect x="290" y="235" width="206" height="90" rx="10" fill="#fff" stroke="#93c5fd" stroke-width="2"/>
+ <text x="393" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">.NET Microservices API</text>
+ <text x="393" y="285" text-anchor="middle" font-size="10" fill="#64748b">AWS EC2</text>
+ <text x="393" y="306" text-anchor="middle" font-size="10" font-weight="700" fill="#d97706">+ AI proxy route (new)</text>
 
- <rect x="290" y="248" width="206" height="94" rx="10" fill="#fff" stroke="#93c5fd" stroke-width="2"/>
- <text x="393" y="280" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">.NET Microservices API</text>
- <text x="393" y="299" text-anchor="middle" font-size="10" fill="#64748b">mobile-post &middot; write-back</text>
- <text x="393" y="316" text-anchor="middle" font-size="10" font-weight="700" fill="#d97706">+ AI proxy route</text>
+ <rect x="290" y="355" width="206" height="75" rx="10" fill="#fff" stroke="#93c5fd" stroke-width="1.5"/>
+ <text x="393" y="387" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Custom Forms API</text>
+ <text x="393" y="407" text-anchor="middle" font-size="10" fill="#64748b">AWS EC2</text>
 
- <rect x="290" y="388" width="206" height="82" rx="10" fill="#fff" stroke="#93c5fd" stroke-width="1.5"/>
- <text x="393" y="419" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">Custom Forms API</text>
- <text x="393" y="438" text-anchor="middle" font-size="10" fill="#64748b">templates + filled form data</text>
+ <!-- SQL Server (the client's existing database, extended with ai.* tables) -->
+ <path d="M215 468 h190 v58 a95,13 0 0 1 -190 0 z" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+ <ellipse cx="310" cy="468" rx="95" ry="13" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+ <text x="310" y="496" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f3a8e">SQL Server</text>
+ <text x="310" y="514" text-anchor="middle" font-size="10" font-weight="700" fill="#d97706">+ new ai.* schema</text>
+ <text x="310" y="529" text-anchor="middle" font-size="9.5" font-weight="600" fill="#b45309">clear isolation of AI data</text>
+
+ <!-- all three APIs read/write the shared SQL Server (bus) -->
+ <path d="M290 300 H 250" fill="none" stroke="#2563eb" stroke-width="2"/>
+ <path d="M290 395 H 250" fill="none" stroke="#2563eb" stroke-width="2"/>
+ <path d="M290 190 H 250 V 450" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#be-blue)"/>
+ <circle cx="250" cy="300" r="3.5" fill="#2563eb"/>
+ <circle cx="250" cy="395" r="3.5" fill="#2563eb"/>
+ <text x="238" y="335" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb" stroke="#ffffff" stroke-width="5" paint-order="stroke" transform="rotate(-90 238 335)">reads + writes</text>
 
  <!-- arrow .NET -> FastAPI (proxy) -->
- <path d="M496 295 H 586" fill="none" stroke="#d97706" stroke-width="2.5" marker-end="url(#be-amber)"/>
- <text x="541" y="281" text-anchor="middle" font-size="10.5" font-weight="700" fill="#d97706">server-to-server</text>
+ <path d="M496 280 H 602" fill="none" stroke="#d97706" stroke-width="2.5" marker-end="url(#be-amber)"/>
+ <text x="551" y="268" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b45309" stroke="#ffffff" stroke-width="5" paint-order="stroke">server-to-server</text>
+ <circle cx="551" cy="300" r="9" fill="#1a56db"/>
+ <text x="551" y="304" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">2</text>
 
- <!-- enrichment reads: FastAPI -> Legacy (dashed, up and back) -->
- <!-- ===== 4 OUR AI SERVER (AWS container) ===== -->
- <rect x="592" y="60" width="450" height="480" rx="16" fill="#fffaf3" stroke="#d97706" stroke-width="1.5" stroke-dasharray="7 5"/>
- <text x="817" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309" letter-spacing="1">AWS &middot; PRIVATE VPC</text>
+ <!-- enrichment reads: FastAPI -> Legacy / Custom Forms -->
+ <path d="M610 250 L 504 175" fill="none" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#be-amber)"/>
+ <text x="552" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309" stroke="#ffffff" stroke-width="5" paint-order="stroke">live enrichment reads</text>
+ <circle cx="580" cy="228" r="9" fill="#1a56db"/>
+ <text x="580" y="232" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">3</text>
+ <path d="M610 310 L 504 385" fill="none" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#be-amber)"/>
+ <text x="560" y="398" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309" stroke="#ffffff" stroke-width="5" paint-order="stroke">form templates + answers</text>
 
- <rect x="614" y="248" width="220" height="94" rx="12" fill="#fff" stroke="#d97706" stroke-width="2.5"/>
- <text x="724" y="279" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">&#9889; FastAPI AI Server</text>
- <text x="724" y="298" text-anchor="middle" font-size="10" fill="#64748b">AWS ECS Fargate &middot; REST /api/v1</text>
- <text x="724" y="315" text-anchor="middle" font-size="10" fill="#64748b">summarise &middot; checks &middot; gaps &middot; briefings</text>
-
- <!-- Gemini -->
- <rect x="890" y="128" width="130" height="76" rx="12" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1.5"/>
- <text x="955" y="158" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5b21b6">&#10024; Gemini</text>
- <text x="955" y="176" text-anchor="middle" font-size="10" fill="#7c6aa6">3.5 Flash + embedding-2</text>
-
- <!-- FastAPI -> Gemini -->
- <path d="M834 272 H 872 V 166 H 886" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#be-amber)"/>
- <text x="872" y="222" text-anchor="middle" font-size="10" font-weight="600" fill="#7c3aed" transform="rotate(-90 872 222)">prompts</text>
-
- <!-- SQL Server -->
- <path d="M614 452 h190 v76 a95,14 0 0 1 -190 0 z" fill="#eff4ff" stroke="#2563eb" stroke-width="2"/>
- <ellipse cx="709" cy="452" rx="95" ry="14" fill="#eff4ff" stroke="#2563eb" stroke-width="2"/>
- <text x="709" y="486" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f3a8e">SQL Server</text>
- <text x="709" y="504" text-anchor="middle" font-size="10" fill="#64748b">business + ai.* &middot; source of truth</text>
+ <!-- FastAPI AI Server -->
+ <rect x="610" y="235" width="220" height="90" rx="12" fill="#fff" stroke="#d97706" stroke-width="2.5"/>
+ <rect x="782" y="227" width="40" height="16" rx="8" fill="#d97706"/>
+ <text x="802" y="239" text-anchor="middle" font-size="9" font-weight="800" fill="#fff">NEW</text>
+ <text x="720" y="278" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">&#9889; FastAPI AI Server</text>
+ <text x="720" y="300" text-anchor="middle" font-size="10" fill="#64748b">AWS ECS Fargate</text>
 
  <!-- Vector DB -->
- <rect x="880" y="444" width="150" height="86" rx="12" fill="#fff" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6 4"/>
- <text x="955" y="474" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b45309">&#129522; Vector DB</text>
- <text x="955" y="492" text-anchor="middle" font-size="10" fill="#64748b">Amazon S3 Vectors</text>
- <text x="955" y="508" text-anchor="middle" font-size="10" fill="#64748b">embedded site history</text>
+ <rect x="850" y="430" width="160" height="90" rx="12" fill="#fff" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6 4"/>
+ <rect x="960" y="422" width="40" height="16" rx="8" fill="#d97706"/>
+ <text x="980" y="434" text-anchor="middle" font-size="9" font-weight="800" fill="#fff">NEW</text>
+ <text x="930" y="464" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b45309">&#129522; Vector DB</text>
+ <text x="930" y="482" text-anchor="middle" font-size="10" fill="#64748b">Amazon S3 Vectors</text>
+ <text x="930" y="498" text-anchor="middle" font-size="10" fill="#64748b">embedded site history</text>
 
- <!-- FastAPI <-> SQL -->
- <path d="M700 342 V 432" fill="none" stroke="#059669" stroke-width="2.2" marker-end="url(#be-green)" marker-start="url(#be-green-r)"/>
- <text x="688" y="392" text-anchor="middle" font-size="10" font-weight="600" fill="#059669" transform="rotate(-90 688 392)">persist + read</text>
+ <!-- Gemini (external SaaS) -->
+ <rect x="1080" y="240" width="140" height="90" rx="12" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1.5"/>
+ <text x="1150" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5b21b6">&#10024; Gemini</text>
+ <text x="1150" y="300" text-anchor="middle" font-size="10" fill="#7c6aa6">3.5 Flash + embedding-2</text>
+
+ <!-- FastAPI -> Gemini (leaves the VPC via NAT) -->
+ <path d="M830 280 H 1076" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#be-purple)"/>
+ <text x="950" y="268" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed" stroke="#ffffff" stroke-width="5" paint-order="stroke">secure HTTPS</text>
+ <circle cx="880" cy="280" r="9" fill="#1a56db"/>
+ <text x="880" y="284" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">5</text>
 
  <!-- FastAPI -> Vector (queries) -->
- <path d="M834 320 H 955 V 438" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#be-amber)"/>
- <text x="908" y="310" text-anchor="middle" font-size="10" font-weight="600" fill="#b45309">similar-history queries</text>
+ <path d="M830 305 H 930 V 426" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#be-amber)"/>
+ <text x="908" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309" stroke="#ffffff" stroke-width="5" paint-order="stroke">similar-history queries</text>
+ <circle cx="848" cy="305" r="9" fill="#1a56db"/>
+ <text x="848" y="309" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">4</text>
 
- <!-- cron: SQL -> Vector -->
- <path d="M806 488 H 874" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#be-green)"/>
- <path d="M841 492 V 546" stroke="#059669" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
- <text x="841" y="562" text-anchor="middle" font-size="9.5" font-weight="600" fill="#059669">embed on dispatch complete &middot; 1-yr backfill</text>
+ <!-- FastAPI <-> SQL (the new layer writes into the client's existing database) -->
+ <path d="M660 325 V 480 H 411" fill="none" stroke="#059669" stroke-width="2.2" marker-end="url(#be-green)" marker-start="url(#be-green-r)"/>
+ <text x="545" y="468" text-anchor="middle" font-size="11" font-weight="700" fill="#047857" stroke="#ffffff" stroke-width="5" paint-order="stroke">persist + read</text>
+ <circle cx="600" cy="480" r="9" fill="#1a56db"/>
+ <text x="600" y="484" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">6</text>
+
+ <!-- embed: SQL -> Vector -->
+ <path d="M411 510 H 846" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#be-green)"/>
+ <text x="628" y="528" text-anchor="middle" font-size="11" font-weight="700" fill="#047857" stroke="#ffffff" stroke-width="5" paint-order="stroke">embed on dispatch complete &middot; 1-yr backfill</text>
+
+ <!-- legend -->
+ <line x1="40" y1="628" x2="70" y2="628" stroke="#2563eb" stroke-width="2.5"/><text x="76" y="632" font-size="10" fill="#475569">exists today &middot; unchanged</text>
+ <line x1="215" y1="628" x2="245" y2="628" stroke="#d97706" stroke-width="2.5"/><text x="251" y="632" font-size="10" fill="#475569">new &middot; this project</text>
+ <line x1="350" y1="628" x2="380" y2="628" stroke="#d97706" stroke-width="2" stroke-dasharray="6 4"/><text x="386" y="632" font-size="10" fill="#475569">async / background</text>
+ <line x1="500" y1="628" x2="530" y2="628" stroke="#7c3aed" stroke-width="2"/><text x="536" y="632" font-size="10" fill="#475569">third-party AI (Google)</text>
+ <line x1="665" y1="628" x2="695" y2="628" stroke="#059669" stroke-width="2.2"/><text x="701" y="632" font-size="10" fill="#475569">persist / embed</text>
+ <circle cx="800" cy="628" r="8" fill="#1a56db"/><text x="800" y="631.5" text-anchor="middle" font-size="9" font-weight="800" fill="#fff">1</text><text x="814" y="632" font-size="10" fill="#475569">steps 1&#8211;6 &middot; one summarise request, in order</text>
  </svg>
  </div>
- <p style="font-size:13px; color:var(--text-muted); margin-top:-14px;">Read left to right: the app talks only to the existing .NET APIs; the Microservices API proxies AI requests to our private FastAPI server, which calls Gemini, persists everything to SQL Server, and pulls similar past incidents from the vector index, which is seeded with the last 12 months of history and updated the moment each new dispatch completes.</p>
 
  
 </section>
 
-<section>
-<h2>4. Low-Level Architecture &middot; End-to-End Process Flow</h2>
 
- <p>One request, followed top to bottom through every component: who acts (color-coded), what each module does, and what flows across each arrow. Statuses are honest: Built vs Planned.</p>
- <style>
-.lldflow /* ── flowchart container ── */
- .flow {
- display: flex;
- flex-direction: column;
- align-items: center;
- width: 100%;
- max-width: 680px;
- position: relative;
- }
-
-.lldflow /* ── each step card ── */
- .step {
- width: 100%;
- display: flex;
- align-items: stretch;
- border-radius: 12px;
- overflow: hidden;
- box-shadow: 0 2px 8px rgba(0,0,0,0.07);
- background: #fff;
- border: 1.5px solid #e2e8f0;
- position: relative;
- }
-
-.lldflow .step-num {
- min-width: 52px;
- display: flex;
- align-items: center;
- justify-content: center;
- font-size: 22px;
- font-weight: 900;
- color: #fff;
- letter-spacing: -1px;
- }
-
-.lldflow .step-
-
- .step-header {
- display: flex;
- align-items: center;
- gap: 10px;
- margin-bottom: 5px;
- }
-
-.lldflow .step-title {
- font-size: 14px;
- font-weight: 700;
- color: #1e293b;
- }
-
-.lldflow .step-desc {
- font-size: 12px;
- color: #475569;
- line-height: 1.55;
- }
-
-.lldflow .step-desc code {
- background: #f1f5f9;
- padding: 1px 5px;
- border-radius: 4px;
- font-size: 11px;
- color: #1d4ed8;
- font-family: 'Consolas', monospace;
- }
-
-.lldflow .actor {
- display: inline-block;
- padding: 2px 8px;
- border-radius: 5px;
- font-size: 10px;
- font-weight: 700;
- text-transform: uppercase;
- letter-spacing: 0.5px;
- }
-
-.lldflow /* ── arrows ── */
- .arrow {
- display: flex;
- flex-direction: column;
- align-items: center;
- margin: 2px 0;
- gap: 0;
- }
-.lldflow .arrow-line {
- width: 2px;
- height: 18px;
- background: #cbd5e1;
- }
-.lldflow .arrow-head {
- width: 0; height: 0;
- border-left: 7px solid transparent;
- border-right: 7px solid transparent;
- border-top: 9px solid #cbd5e1;
- }
-.lldflow .arrow-label {
- font-size: 10px;
- color: #94a3b8;
- font-style: italic;
- margin: -4px 0 0;
- text-align: center;
- }
-
-.lldflow /* ── parallel block ── */
- .parallel-block {
- width: 100%;
- border: 1.5px dashed #059669;
- border-radius: 12px;
- padding: 12px;
- background: #f0fdf4;
- position: relative;
- }
-.lldflow .parallel-label {
- position: absolute;
- top: -10px;
- left: 14px;
- background: #059669;
- color: #fff;
- font-size: 10px;
- font-weight: 700;
- padding: 1px 8px;
- border-radius: 4px;
- letter-spacing: 0.5px;
- }
-.lldflow .parallel-inner {
- display: flex;
- gap: 8px;
- margin-top: 6px;
- }
-.lldflow .parallel-item {
- flex: 1;
- background: #fff;
- border: 1px solid #a7f3d0;
- border-radius: 8px;
- padding: 8px 10px;
- font-size: 11px;
- color: #065f46;
- }
-.lldflow .parallel-item strong {
- display: block;
- font-size: 12px;
- margin-bottom: 2px;
- color: #064e3b;
- }
-
-.lldflow /* ── diamond decision ── */
- .diamond-wrap {
- display: flex;
- flex-direction: column;
- align-items: center;
- width: 100%;
- }
-.lldflow .diamond {
- width: 200px;
- height: 60px;
- background: #fff;
- border: 2px solid #e2e8f0;
- transform: rotate(0);
- display: flex;
- align-items: center;
- justify-content: center;
- clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
- font-size: 12px;
- font-weight: 700;
- color: #1e293b;
- text-align: center;
- }
-
-.lldflow /* ── output box ── */
- .output-box {
- width: 100%;
- border-radius: 12px;
- border: 2px solid #1a56db;
- background: linear-gradient(135deg, #e8effc 0%, #f0f9ff 100%);
- padding: 16px 20px;
- }
-.lldflow .output-box .out-title {
- font-size: 14px;
- font-weight: 800;
- color: #0f3a8e;
- margin-bottom: 10px;
- }
-.lldflow .output-sections {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 6px;
- }
-.lldflow .out-sec {
- background: #fff;
- border-radius: 6px;
- padding: 5px 8px;
- font-size: 11px;
- color: #1e293b;
- border-left: 3px solid #1a56db;
- }
-.lldflow .out-sec.complete { border-left-color: #059669; }
-.lldflow .out-sec.vague { border-left-color: #d97706; }
-.lldflow .out-sec.missing { border-left-color: #94a3b8; }
-
-.lldflow /* ── end box ── */
- .end-box {
- width: 100%;
- background: #059669;
- border-radius: 12px;
- padding: 14px 20px;
- display: flex;
- align-items: center;
- gap: 14px;
- color: #fff;
- }
-.lldflow .end-icon { font-size: 28px; }
-.lldflow .end-title { font-size: 15px; font-weight: 800; }
-.lldflow .end-desc { font-size: 12px; opacity: 0.9; margin-top: 2px; }
-
-.lldflow /* ── actor colour presets ── */
- .flutter { background: #0ea5e9; }
-.lldflow .flutter-a { background: #e0f2fe; color: #0369a1; }
-.lldflow .net { background: #7c3aed; }
-.lldflow .net-a { background: #ede9fe; color: #5b21b6; }
-.lldflow .server { background: #1a56db; }
-.lldflow .server-a { background: #dbeafe; color: #1d4ed8; }
-.lldflow .llm { background: #db2777; }
-.lldflow .llm-a { background: #fce7f3; color: #9d174d; }
-.lldflow .fjx { background: #059669; }
-.lldflow .fjx-a { background: #d1fae5; color: #065f46; }
-
-.lldflow /* ── legend ── */
- .legend {
- display: flex;
- gap: 14px;
- flex-wrap: wrap;
- justify-content: center;
- margin-top: 28px;
- font-size: 11px;
- }
-.lldflow .legend-item { display: flex; align-items: center; gap: 5px; }
-.lldflow .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
- </style>
- <style>
-/* spacing & polish overrides for the LLD flow */
-.lldflow .flow { max-width: 800px; }
-.lldflow .step { margin: 0; border-radius: 14px; }
-.lldflow .step-num { min-width: 58px; font-size: 24px; }
-.lldflow .step-body { padding: 16px 24px 18px; }
-.lldflow .step-header { margin-bottom: 9px; gap: 12px; flex-wrap: wrap; }
-.lldflow .step-title { font-size: 14.5px; }
-.lldflow .step-desc { font-size: 12.5px; line-height: 1.75; color: #475569; }
-.lldflow .step-desc code { padding: 2px 7px; line-height: 1.4; }
-.lldflow .actor { padding: 3px 10px; }
-.lldflow .arrow { margin: 8px 0; }
-.lldflow .arrow-line { height: 24px; }
-.lldflow .arrow-label { margin-top: 2px; font-size: 10.5px; }
-.lldflow .parallel-block { padding: 18px 16px 14px; }
-.lldflow .parallel-inner { gap: 12px; margin-top: 10px; }
-.lldflow .parallel-item { padding: 12px 14px; line-height: 1.6; }
-.lldflow .parallel-item strong { margin-bottom: 5px; }
-.lldflow .output-box { padding: 20px 24px; }
-.lldflow .output-sections { gap: 9px; }
-.lldflow .out-sec { padding: 7px 10px; }
-.lldflow .end-box { padding: 18px 24px; }
-.lldflow .legend { margin-top: 34px; gap: 18px; }
-</style>
- <div class="lldflow" style="display:flex; flex-direction:column; align-items:center; background:#fff; border:1px solid var(--border); border-radius:12px; padding:26px 18px;">
- <div class="flow">
-
- <!-- ── Step 1 ── -->
- <div class="step">
- <div class="step-num flutter">1</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor flutter-a">Flutter</span>
- <span class="step-title">Technician completes dispatch wizard</span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- 7 steps: <strong>Reason → Parts → Forms → Time → Injury → Onsite → Review</strong>.<br>
- Custom forms saved to <code>FormEditorCubit</code>; dropdowns decoded to labels in-memory.
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">on Review step load</div>
- </div>
-
- <!-- ── Step 2 ── -->
- <div class="step">
- <div class="step-num flutter">2</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor flutter-a">Flutter</span>
- <span class="step-title">Compile mobile JSON payload</span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- <code>dispatch_answers_builder</code> packs:
- <code>dispatch_data</code> (DispatchId, WizardType, EquipmentIds) ·
- <code>form_answers</code> (RepairCategory, IssueType, PartsUsed[], TimeEntries[], Notes) ·
- <code>CompletedForms[]</code> (decoded custom + ref-tracking form fields, signatures skipped) ·
- optional <code>form_structure</code> (dropdown maps). <strong>Zero extra API calls.</strong>
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">POST /api/v1/summarise · existing Entra token</div>
- </div>
-
- <!-- ── Step 3 ── -->
- <div class="step">
- <div class="step-num net">3</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor net-a">.NET Proxy</span>
- <span class="step-title">Auth validation &amp; forward</span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- Validates existing OAuth2/Entra token (single auth system) → strips user credentials →
- adds <code>INTERNAL_API_KEY</code> → forwards server-to-server to the private internal ALB
- with extended timeout (20–30s for LLM latency).
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">internal HTTPS · VPC private</div>
- </div>
-
- <!-- ── Step 4 ── -->
- <div class="step">
- <div class="step-num server">4</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor server-a">FastAPI</span>
- <span class="step-title">ECS entry · REST API router</span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- uvicorn (ASGI) on an always-on ECS Fargate task · Internal-auth middleware checks <code>INTERNAL_API_KEY</code> ·
- <code>POST /api/v1/summarise</code> → Pydantic request validation → <code>run_summarise_pipeline(input)</code> in <code>summariser.py</code>
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">pipeline start</div>
- </div>
-
- <!-- ── Step 5 Parallel ── -->
- <div class="parallel-block">
- <div class="parallel-label">&#9654; PARALLEL ASYNC FETCH - data_enricher.py</div>
- <div style="font-size:11px; color:#065f46; font-weight:600; margin-bottom:8px;">
- <span class="actor fjx-a">FjxApi</span>&nbsp; All fetches fire simultaneously · fail-soft (pipeline continues if any fail)
- <span class="badge badge-built" style="margin-left:6px;">Built (partial)</span>
- </div>
- <div class="parallel-inner">
- <div class="parallel-item">
- <strong>Dispatch Details</strong>
- <code>GetAssignedDispatchesDetails</code><br>
- Customer name · site · work order · NTE amount · dispatch reason
- </div>
- <div class="parallel-item">
- <strong>Equipment Fields</strong>
- <code>GetDispatchEquipmentFieldData</code><br>
- Per EquipmentId: model · manufacturer · serial · col1–col11 custom fields
- </div>
- <div class="parallel-item">
- <strong>Procedures</strong>
- <code>GetDispatchProcedures</code><br>
- Customer compliance rules - always fetched live, never cached
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">→ EnrichedContext</div>
- </div>
-
- <!-- ── Step 6 ── -->
- <div class="step">
- <div class="step-num server">6</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor server-a">FastAPI</span>
- <span class="step-title">Prompt construction · <code>prompt_builder.py</code></span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- <strong>System instruction:</strong> <code>ticket_standard.md</code> (versioned) + output format spec + status definitions.<br>
- <strong>User prompt blocks:</strong>
- ① Dispatch context &nbsp;
- ② Equipment specs &nbsp;
- ③ Completed Forms &nbsp;
- ④ Wizard form answers &nbsp;
- ⑤ Form structure (optional) &nbsp;
- ⑥ Customer procedures.<br>
- Token profile: ~2,080 in / ~1,050 out ≈ <strong>~$0.013 / dispatch on Gemini 3.5 Flash</strong>
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">system + user prompt strings</div>
- </div>
-
- <!-- ── Step 7 ── -->
- <div class="step">
- <div class="step-num llm">7</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor llm-a">LLM</span>
- <span class="step-title">LLM call · <code>llm_client.py</code></span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- Provider toggle via <code>LLM_PROVIDER</code> env var:
- <strong>Gemini 3.5 Flash</strong> (decided launch model · Google AI · implicit caching · ~1-2s) or
- <strong>qwen3-vl</strong> (self-hosted private gateway · 4–6s · data stays in client infra).<br>
- Returns raw JSON string: <code>{ "summary": […×12], "procedureChecks": […] }</code>
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">raw JSON string</div>
- </div>
-
- <!-- ── Step 8 ── -->
- <div class="step">
- <div class="step-num server">8</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor server-a">FastAPI</span>
- <span class="step-title">Parse &amp; validate · <code>_parse_llm_response</code></span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- JSON parse (regex fallback if fenced) · split <code>summary[]</code> / <code>procedureChecks[]</code> ·
- strip LLM-invented section prefixes (<code>"Section 3 - "</code> → <code>"Work Performed"</code>) ·
- iterate canonical 12-section list → match by name → fill <strong>MISSING</strong> placeholder for any absent section ·
- guarantee <strong>exactly 12 sections in standard order</strong>.
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">12 TicketSection objects</div>
- </div>
-
- <!-- ── Step 9 ── -->
- <div class="step">
- <div class="step-num server">9</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor server-a">FastAPI</span>
- <span class="step-title">Post-process · wizard-type overrides</span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- No LLM call - pure Python:
- <strong>Ignorable sections</strong> overridden to COMPLETE + "Not applicable" by wizard type
- (e.g. NeedsQuote has no Work Performed) ·
- <strong>Sign-Off</strong> rebuilt from <code>TimeEntries[-1].EndTime</code> ·
- <strong>Customer Communication</strong> rebuilt from <code>NoteForCustomer</code> + <code>ReviewSignerName</code> ·
- <strong>Refrigerant Tracking</strong> → N/A if <code>WasRefrigerentUsed=false</code> and no refrigerant form.
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">SummaryResult → .NET proxy → Flutter</div>
- </div>
-
- <!-- ── Output box ── -->
- <div class="output-box">
- <div class="out-title">&#129302; SummaryResult - 12 Sections Returned</div>
- <div class="output-sections">
- <div class="out-sec complete">1 · Dispatch Overview</div>
- <div class="out-sec complete">2 · Equipment Details</div>
- <div class="out-sec complete">3 · Reported Problem</div>
- <div class="out-sec complete">4 · Diagnosis &amp; Root Cause</div>
- <div class="out-sec vague">5 · Work Performed</div>
- <div class="out-sec complete">6 · Refrigerant Tracking</div>
- <div class="out-sec complete">7 · Parts &amp; Materials</div>
- <div class="out-sec missing">8 · System Performance</div>
- <div class="out-sec complete">9 · Safety &amp; Compliance</div>
- <div class="out-sec complete">10 · Customer Communication</div>
- <div class="out-sec complete">11 · Follow-Up &amp; Open Items</div>
- <div class="out-sec complete">12 · Sign-Off</div>
- </div>
- <div style="margin-top:10px; font-size:11px; color:#64748b; display:flex; gap:14px; flex-wrap:wrap;">
- <span style="color:#059669; font-weight:700;">&#9646; COMPLETE</span>
- <span style="color:#d97706; font-weight:700;">&#9646; VAGUE</span>
- <span style="color:#94a3b8; font-weight:700;">&#9646; MISSING</span>
- <span style="color:#dc2626; font-weight:700;">&#9646; UNMET (Pass B)</span>
- <span style="color:#475569; margin-left:auto;">+ procedureResults[]</span>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">rendered as cards in Review step</div>
- </div>
-
- <!-- ── Step 10 ── -->
- <div class="step">
- <div class="step-num flutter">10</div>
- <div class="step-body">
- <div class="step-header">
- <span class="actor flutter-a">Flutter</span>
- <span class="step-title">Tech reviews summary · proceed guard</span>
- <span class="badge badge-built">Built</span>
- </div>
- <div class="step-desc">
- 12 section cards displayed with status badges · procedure checklist shown ·
- <strong>Submit button disabled</strong> until summary loaded and reviewed ·
- Tech reads, optionally edits, then taps Submit.
- <em>(Planned: CRITICAL gap findings also block submit until corrected.)</em>
- </div>
- </div>
- </div>
-
- <div class="arrow">
- <div class="arrow-line"></div>
- <div class="arrow-head"></div>
- <div class="arrow-label">tech taps Submit</div>
- </div>
-
- <!-- ── End ── -->
- <div class="end-box">
- <div class="end-icon">&#128190;</div>
- <div>
- <div class="end-title">Write-back via existing .NET mobile-post flow</div>
- <div class="end-desc">
- Dispatch · parts · time · notes · accepted summary → FieldJetX DB (SQL Server) ·
- Job closed · <code>ai.summaries.accepted_at</code> stamped (planned with ai.* schema)
- </div>
- </div>
- </div>
-
-</div><!-- /flow -->
- <div class="legend">
- <div class="legend-item"><div class="legend-dot" style="background:#0ea5e9;"></div> Flutter (Mobile App)</div>
- <div class="legend-item"><div class="legend-dot" style="background:#7c3aed;"></div> .NET Proxy (Auth)</div>
- <div class="legend-item"><div class="legend-dot" style="background:#1a56db;"></div> FastAPI on ECS (AI Server)</div>
- <div class="legend-item"><div class="legend-dot" style="background:#db2777;"></div> LLM (Gemini / qwen3-vl)</div>
- <div class="legend-item"><div class="legend-dot" style="background:#059669;"></div> FjxApi (Enrichment)</div>
- <div class="legend-item"><div class="legend-dot" style="background:#d1fae5; border:1.5px solid #059669;"></div> Parallel block</div>
-</div>
- </div>
-</section>
-
-<footer style="color: var(--text-muted); font-size: 13px; text-align: center; border-top: 1px solid var(--border); padding-top: 24px;">ClimatePros Use Case B &middot; extracted from usecase-b-system-design.html &middot; July 2026</footer>
 </div>
 </body>
 </html>
